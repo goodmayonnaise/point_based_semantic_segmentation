@@ -52,24 +52,24 @@ if __name__ == "__main__":
 
         print(len(train), len(val))            
         
-        file = open('train_pcd.txt',"w")
+        file = open('dataloaders/configs/train_pcd.txt',"w")
         for i in train :
             file.write(f'{i}\n')
         file.close()
         
-        file = open('val_pcd.txt',"w")
+        file = open('dataloaders/configs/val_pcd.txt',"w")
         for i in val :
             file.write(f'{i}\n')
         file.close()
     elif mode == 'test':
         vel = os.path.join(kittipath, '08', 'velodyne')
         label = os.path.join(kittipath, '08', 'labels')
-        f = open('test_pcd.txt','w')
+        f = open('dataloaders/configs/test_pcd.txt','w')
         
         for i in os.listdir(vel):
             f.write(os.path.join(vel, f'{i}\n'))
         f.close()
-        f = open('test_label.txt','w')
+        f = open('dataloaders/configs/test_label.txt','w')
         
         for i in os.listdir(label):
             
